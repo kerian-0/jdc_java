@@ -7,7 +7,8 @@ public class StudentService{
 	private static Student[] students=new Student[0];
 
 	public static void addStudent(Student student){
-		students=Arrays.copyOf(students,students.length+1);
+		student=Arrays.copyOf(students,students.length+1);
+		// System.out.println(student);
 		students[students.length-1]=student;
 	}
 

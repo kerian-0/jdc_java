@@ -1,0 +1,5 @@
+
+
+interface Color{
+   void printt();
+}

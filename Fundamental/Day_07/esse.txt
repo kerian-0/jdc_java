@@ -1,0 +1,46 @@
+javap -c Main  //to see byte code
+
+
+//Create class about++++++++++++++++++++++++++++++==============================================================
+class is build inner method and class  //03-interface/interfaceWithFinal/ClassUsage.java
+
+class type static{ } block //{} instance block
+
+static and instance is before constructor
+
+local variable is final if innerclass variable
+
+
+
+pss by value ** pass by reference
+
+
+
+//========================interface=============================================
+
+interface is not build obj
+if you want to use ,use this child and anonymous class
+
+
+when Abstract and when Interface
+
+//polymophism
+
+
+//abstract if for abstract
+//interface if others
+
+
+///outer static memberတွေကို ခေါ်သုံးလို့ရတယ်
+//ဘယ်ကလဲဆိုတော့ static inner class ထဲမာ
+
+
+//nestected class ==========================
+static nested class
+inner nested class
+
+///method ထဲက class က method ခေါ် ပီးတာနဲ့ stackမာ အလုပ်လုပ်ပြီး ခနအတွင်း ပျက်စီးstack > heatအချိန်တိုတောင်းတယ်ပ
+
+//also call >>lazy loading
+reference က heat >stack မဖျက်စီးသေးသ၍ ပျက်စီး
+

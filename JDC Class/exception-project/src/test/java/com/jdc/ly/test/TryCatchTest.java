@@ -12,7 +12,7 @@ public class TryCatchTest {
 	@Test
 	public void testTryWithFinally() {
 		String res = data.useCheckedWithTryFinallyResource();
-		System.out.println(res +"Hello: ");
+		System.out.println(res );
 	}
 
 	@Test

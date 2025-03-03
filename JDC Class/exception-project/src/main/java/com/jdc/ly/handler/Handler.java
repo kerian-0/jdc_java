@@ -2,7 +2,8 @@ package com.jdc.ly.handler;
 
 public class Handler {
 
-	private Person person=new Person();
+	private Person person = new Person();
+	private int count = 1;
 
 	public Handler() {
 		super();
@@ -19,19 +20,31 @@ public class Handler {
 	}
 
 	public void useAge() {
-		person.setAge(20);
-		int age = dividedByZero(person.getAge());
-		System.out.println(age);
+		try {
+			person.setAge(20);
+			int age = dividedByZero(person.getAge());
+			System.out.println(age);
+		} catch (ArithmeticException e) {
+			System.out.println("This is ArithmeticException because any number can't divided by zero");
+		}
 	}
 
+	// stack over flow
+
 	public void recursive() {
-		if (person.getAge() > 0) {
-			recursive();
+		try {
+			if (count > 0) {
+				System.out.println("recursive : " + count);
+				count++;
+				recursive();
+			}
+		} catch (StackOverflowError e) {
+			System.out.println("This is StackOverflow error");
 		}
 	}
 
 	private int dividedByZero(int age) {
-		return age;
+		return age / 0;
 	}
 
 }

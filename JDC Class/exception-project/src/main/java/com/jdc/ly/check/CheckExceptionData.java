@@ -5,9 +5,9 @@ import java.io.IOException;
 
 
 public class CheckExceptionData {
-	public String createFile() {
+	public String createFile(String dir) {
 		try {
-			File file=new File("D:/data/test.txt");
+			File file=new File(dir+"test.txt");
 			file.createNewFile();
 			return file.exists() ? "exit" :"doesn't exit";
 		}catch(IOException e) {

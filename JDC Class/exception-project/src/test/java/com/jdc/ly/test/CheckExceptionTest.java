@@ -11,8 +11,11 @@ public class CheckExceptionTest {
 
 	@Test
 	void fileTest() {
-		String res = data.createFile();
+		String res = data.createFile("");
 		assertEquals(res, "IOException");
+		
+		 res = data.createFile("D:/data/");
+		assertEquals(res, "exit");
 	}
 
 }

@@ -5,15 +5,19 @@ import java.io.InputStreamReader;
 
 public class TryCatchData {
 
-	public String useCheckedWithTryFinally() {
+	public String useCheckedWithTryFinallyResource() throws NumberFormatException {
 		String str = null;
-		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			return br.readLine();
+		int res =0;
+		try(			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+) {
+			System.out.println("Type Number: !!!");
+			str=br.readLine();
+			res=Integer.parseInt(str);
+			br.close();
 		} catch (Exception e) {
 			str = "IOException";
 		} finally {
-			str = str + "with finally";
+			str = str + "with number of: "+res;
 		}
 		return str;
 	}

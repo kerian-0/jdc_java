@@ -1,16 +1,13 @@
 package com.jdc.ly.anno;
 
 import java.lang.annotation.ElementType;
-import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.jdc.ly.Grade;
-
-@Target(ElementType.METHOD)
+//‌place to write
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface GradeAdder {
-	
-	Grade[] value() default Grade.GradeA;
-
+public @interface NameCheckers {
+    NameChecker[] value() ;
 }

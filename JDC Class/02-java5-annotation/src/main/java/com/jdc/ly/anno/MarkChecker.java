@@ -1,16 +1,14 @@
 package com.jdc.ly.anno;
 
 import java.lang.annotation.ElementType;
-import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.jdc.ly.Grade;
-
-@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface GradeAdder {
+@Target(ElementType.METHOD)
+		public @interface MarkChecker {
 	
-	Grade[] value() default Grade.GradeA;
+	int mark() default 0;
 
 }

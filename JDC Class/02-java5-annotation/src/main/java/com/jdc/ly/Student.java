@@ -1,55 +1,23 @@
 package com.jdc.ly;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import com.jdc.ly.anno.ParentAnno;
 
-public class Student {
-	@NameChecker("Willin")
-	private String name;
+public class Student extends StudentAnno {
 
-	private int age;
-
-	private Grade[] grades;
-
-	public Student(String name, @AgeChecker int age) throws NoSuchFieldException {
-		super();
-		this.name = name;
-		this.age = checkAge(age);
+	public Student(String name, int age,int mark) throws NoSuchFieldException, NoSuchMethodException, SecurityException {
+		super(name,age,mark);
+		
 	}
 
-	private int checkAge(int age2) throws NoSuchFieldException {
-		Field p = Student.class.getDeclaredField("age");
-		AgeChecker checker = p.getDeclaredAnnotation(AgeChecker.class);
-		if (null != checker) {
-			return checker.age();
-		}
-		return 0;
-	}
-	
 	public Grade[] getGrade() throws NoSuchMethodException, SecurityException {
-		addGrade();
+		
 		return grades;
 	}
 
-	@GradeAdder({ Grade.GradeA, Grade.GradeB })
-	public void addGrade() throws NoSuchMethodException, SecurityException {
-		Method m = Student.class.getDeclaredMethod("addGrade");
-		GradeAdder adder = m.getAnnotation(GradeAdder.class);
-		if (null != adder) {
-			this.grades = adder.value();
-		} else {
-			this.grades = new Grade[0];
-		}
-
+	public int getMark() {
+		return mark;
 	}
-
-
 	public String getName() throws NoSuchFieldException {
-		Field f = Student.class.getDeclaredField("name");
-		NameChecker checker = f.getDeclaredAnnotation(NameChecker.class);
-		if (null != checker) {
-			return checker.value();
-		}
 		return name;
 	}
 
@@ -57,4 +25,11 @@ public class Student {
 		return age;
 	}
 
+	public String getClassName() {
+		ParentAnno anno=Student.class.getAnnotation(ParentAnno.class);
+		if(null !=anno) {
+			return anno.value();
+		}
+		return null;
+	}
 }

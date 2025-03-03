@@ -5,9 +5,15 @@ import java.io.IOException;
 
 
 public class CheckExceptionData {
-	void createFile() throws IOException {
-		File file=new File("text");
-		file.createNewFile();
+	String createFile() {
+		try {
+			File file=new File("D:/data/test.txt");
+			file.createNewFile();
+			return file.exists() ? "exit" :"doesn't exit";
+		}catch(IOException e) {
+			
+		}
+		return null;
 	}
 
 }

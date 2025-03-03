@@ -7,11 +7,12 @@ import org.junit.jupiter.api.Test;
 import com.jdc.ly.check.CheckExceptionData;
 
 public class CheckExceptionTest {
-	CheckExceptionData data=new CheckExceptionData();
-@Test
-void fileTest() {
-	String res=data.createFile();
-	assertEquals(res,"IOException");
-}
+	CheckExceptionData data = new CheckExceptionData();
+
+	@Test
+	void fileTest() {
+		String res = data.createFile();
+		assertEquals(res, "IOException");
+	}
 
 }

@@ -5,8 +5,9 @@ class Main{
 		// System.out.println("Update : " +value);
 
 		Data data=new Data();
-		data.value=20;
-		updateData(data);
+		data.value=20;//pass by value
+		System.out.println(data.value);
+		updateData(data);//pass by reference
 		// System.out.println("Update data: "+data.value);
 		// updateDataTow(data);
 

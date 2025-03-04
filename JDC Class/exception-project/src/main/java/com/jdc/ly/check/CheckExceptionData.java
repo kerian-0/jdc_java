@@ -9,9 +9,14 @@ public class CheckExceptionData {
 		try {
 			File file=new File(dir+"test.txt");
 			file.createNewFile();
-			return file.exists() ? "exit" :"doesn't exit";
+			String str= file.exists() ? "exit" :"doesn't exit";
+			System.out.println(str);
+			return str;
+			
 		}catch(IOException e) {
+			System.out.println(e);
 			return "IOException";
+			
 		}
 		
 	}

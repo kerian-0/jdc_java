@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import com.jdc.ly.handler.Handler;
 
-public class HandlerTest {
+public class BHandlerTest {
 	Handler handle = new Handler();
 
 	@Test
@@ -13,15 +13,15 @@ public class HandlerTest {
 		handle.useName();
 
 	}
-	
-	//test recursive
+
+	// test recursive
 	@Test
 	void testAge() {
 		handle.useAge();
-		
+
 	}
-	
-//	@Test
+
+	@Test
 	void testRecursive() {
 		handle.recursive();
 	}
